@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theoretical Biology Journal Club</title>
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/201/201623.png" type="image/x-icon">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #1abc9c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+        }
+
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #16a085;
+        }
+
+        /* Upcoming Events */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .event-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .event-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+        }
+
+        /* Past Papers & Resources */
+        .paper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .paper-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .paper-card h3 {
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+        }
+
+        .social-icons {
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo-container">
+                <!-- Replace this with your actual logo (PNG/SVG) -->
+                <img src="file:///C:/Users/Anshu/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/40C04DB8524C0D1E87ED1966EECF48C2/WhatsApp%20Image%202025-06-24%20at%2023.49.58_46b5fe77.jpg" alt="Logo" class="logo-img">
+                <div class="logo-text">Theoretical<span>Biology</span></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#papers">Papers</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#join">Join Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Exploring the Interface of Theoretical knowledge and Biology</h1>
+            <p>Join our journal club to discuss cutting-edge research in mathematical biology, evolutionary dynamics, and computational modeling.</p>
+            <a href="#schedule" class="btn">View Upcoming Talks</a>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="section" id="schedule">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="event-card">
+                <h3>Models on the Runway: How Do We Make Replicas of the Worlds?</h3>
+                <div class="event-meta">
+                    <span><i class="fas fa-calendar-alt"></i> June 29, 2025</span>
+                    <span><i class="fas fa-user"></i> Rwitacheta Sinha, Third year BSMS</span>
+                    <span><i class="fas fa-clock"></i> 11:00 AM (IST)</span>
+                </div>
+                <p>Abstract: TBA.</p>
+                <a href="https://meet.google.com/xgp-mtnm-try" class="btn">Join Meeting</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title">About the Journal Club</h2>
+            <p>We are an interdisciplinary group of researchers, students, and enthusiasts who meet regularly to discuss foundational and applied work in theoretical biology. Our discussions span topics from mathematical biology to systems biology and beyond.</p>
+            <p>The journal club is a weekly gathering. One or two members of the club will  present a summary of the chosen paper or reading material, that the whole group has read. Then, the discussion will begin. Attendees can ask clarifying questions, inquire about different aspects of the experimental design, critique the methods, and bring a healthy amount of skepticism (or praise) to the results.
+</p>
+        </div>
+    </section>
+
+    <!-- Past Papers -->
+    <section class="section" id="papers">
+        <div class="container">
+            <h2 class="section-title">Recently Discussed Papers</h2>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h3>A quantitative description of membrane current and its application to conduction and excitation in nerve</h3>
+                    <p><strong>Author:</strong> 
+A L Hodgkin, A F Huxley</p>
+                    <p><strong>Presenter:</strong> Kushagra, Third year, BSMS</p>
+                    <div>
+                        <span class="tag">mathematical Modeling</span>
+                        <span class="tag">Neuroscience</span>
+                    </div>
+                    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/">View Paper →</a>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+       <!-- Resources -->
+    <section class="section" id="resources">
+        <div class="container">
+            <h2 class="section-title">Resources</h2>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h3><i class="fas fa-book"></i> Recommended Books</h3>
+                    <ul>
+                        <li>Evolutionary Dynamics - Martin Nowak</li>
+                        <li>Theoretical Ecology - May & McLean</li>
+                        <li>Mathematical Biology - J.D. Murray</li>
+                    </ul>
+                </div>
+                <div class="paper-card">
+                    <h3><i class="fas fa-laptop-code"></i> Software Tools</h3>
+                    <ul>
+                        <li>Python (SciPy, NumPy, Matplotlib)</li>
+                        <li>R (deSolve, ggplot2)</li>
+                        <li>NetLogo (Agent-based Modeling)</li>
+                        <li>Julia (Differential Equations)</li>
+                    </ul>
+                </div>
+                <div class="paper-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Learning Resources</h3>
+                    <ul>
+                        <li>Coursera: Introduction to Systems Biology</li>
+                        <li>edX: Mathematical Modeling</li>
+                        <li>YouTube: Theoretical Biology Lectures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="section about" id="join">
+        <div class="container">
+            <h2 class="section-title">Join Our Journal Club</h2>
+            <div class="event-card">
+                <h3>Participation Details</h3>
+                <p>We meet every sunday at 11:00 AM in online format for now, once back to the campus, we will hold in-person sessions.</p>
+                <p>To receive meeting invites and paper announcements:</p>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="anshu22@iiserbpr.ac.in" class="btn">
+                        <i class="fas fa-envelope"></i> Email Us to Join
+                    </a>
+                    <a href="https://calendar.google.com/calendar" class="btn" target="_blank" style="margin-left: 1rem;">
+                        <i class="fas fa-calendar-plus"></i> Add to Calendar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#papers">Papers</a>
+                <a href="#resources">Resources</a>
+                <a href="#join">Join Us</a>
+            </div>
+            
+            <p>&copy; 2024 Theoretical Biology Journal Club | 
+             
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
